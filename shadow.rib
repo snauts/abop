@@ -1,0 +1,16 @@
+PixelFilter "box" 1 1
+Display "spot.depth" "zfile" "z"
+Display "+shadow.png" "file" "rgba" 
+Format 1024 1024 1
+Clipping  9000.0 10001.0
+Projection "perspective" "fov" [5]
+Rotate -90.0 1.0 0.0 0.0
+Translate 0.0 -10000.0 0.0
+Scale 1.0 1.0 -1.0
+
+WorldBegin
+  LightSource "ambientlight" 1 "intensity" [1.0]
+  ReadArchive "plant.rib"
+WorldEnd
+
+MakeShadow "spot.depth" "spotmap.tex"

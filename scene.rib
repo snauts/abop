@@ -1,0 +1,22 @@
+Display "scene.png" "file" "rgba"
+Format 1024 1024 1
+Clipping 100.0 5000.0
+Projection "perspective" "fov" [45]
+ReadArchive "point-of-view.rib"
+Scale 1.0 1.0 -1.0
+WorldBegin 
+  LightSource "ambientlight" 1 "intensity" [0.2]
+  LightSource "shadowmap" 2 "intensity" [1.5]
+  	      "string shadowname" "spotmap.tex"
+  	      "from" [0 10000 0]
+	      "to" [0 0 0]
+  ReadArchive "plant.rib"
+
+  AttributeBegin
+    Attribute "identifier" "name" [ "Ground" ]
+    Color [0.2 0.15 0.0]
+    Surface "matte"
+    Scale 10000.0 10000.0 10000.0
+    Polygon "P" [1 0 1 1 0 -1 -1 0 -1 -1 0 1]
+  AttributeEnd
+WorldEnd

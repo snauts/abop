@@ -1,0 +1,27 @@
+This program is implementation of L-systems 
+as described in "The Algorithmic Beauty of Plants"
+http://algorithmicbotany.org/papers/abop/abop.pdf
+
+*) Build the machine.so
+
+   You have to get development libraries of zlib, libpng, opengl and SDL
+
+*) Make sure you have cffi and cl-opengl
+
+*) To run all examples launch SBCL or CLISP and type:
+
+  (asdf:oos 'asdf:load-op 'abop)
+  (in-package :abop)
+  (all)
+
+*) UI in OpenGL view:
+
+  rotate			- MB-drag
+  zoom				- CTRL + MB-drag
+  pan				- SHIFT + MB-drag
+  quit				- Q or ESC
+  save wavefront (scene.obj)	- W
+  save povray (scene.inc)	- R
+  save PNM (result-xxxxx.pnm)	- S
+  save collada (scene.dae)	- C
+  save renderman rib		- B
